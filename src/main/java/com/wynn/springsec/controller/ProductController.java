@@ -1,6 +1,5 @@
 package com.wynn.springsec.controller;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +26,7 @@ import com.wynn.springsec.repository.ProductRepository;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    private static final String PRODUCT_NOT_FOUND = "Product not found"; 
+    private static final String PRODUCT_NOT_FOUND = "Product not found";
 
     @Autowired
     ProductRepository productRepository;

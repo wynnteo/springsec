@@ -1,5 +1,6 @@
 package com.wynn.springsec.model;
 
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -8,7 +9,7 @@ import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
-    @UniqueConstraint(columnNames = "email")
+        @UniqueConstraint(columnNames = "email")
 })
 public class User {
     @Id
@@ -35,6 +36,10 @@ public class User {
     private AuthProvider provider;
 
     private String providerId;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
 
     public Long getId() {
         return id;
@@ -99,4 +104,13 @@ public class User {
     public void setProviderId(String providerId) {
         this.providerId = providerId;
     }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
 }

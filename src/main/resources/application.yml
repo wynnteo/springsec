@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/springsec?useSSL=false
+    username: root
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  # security:
+  #   oauth2:
+  #     client:
+  #       registration:
+  #         google:
+  #           clientId: 5014057553-8gm9um6vnli3cle5rgigcdjpdrid14m9.apps.googleusercontent.com
+  #           clientSecret: tWZKVLxaD_ARWsriiiUFYoIk
+  #           redirectUri: '{baseUrl}/oauth2/callback/{registrationId}'
+  #           scope:
+  #             - email
+  #             - profile
+  #         facebook:
+  #           clientId: 222180763787672
+  #           clientSecret: ca3bdbf98dc20c952417ddd24a7d282b
+  #           redirectUri: '{baseUrl}/oauth2/callback/{registrationId}'
+  #           scope:
+  #             - email
+  #             - public_profile
+  #         github:
+  #           clientId: d3e47fc2ddd966fa4352
+  #           clientSecret: 3bc0f6b8332f93076354c2a5bada2f5a05aea60d
+  #           redirectUri: '{baseUrl}/oauth2/callback/{registrationId}'
+  #           scope:
+  #             - user:email
+  #             - read:user
+  #       provider:
+  #         facebook:
+  #           authorizationUri: https://www.facebook.com/v12.0/dialog/oauth
+  #           tokenUri: https://graph.facebook.com/v12.0/oauth/access_token
+  #           userInfoUri: https://graph.facebook.com/v12.0/me?fields=id,first_name,middle_name,last_name,name,email,verified,is_verified,picture.width(250).height(250)
