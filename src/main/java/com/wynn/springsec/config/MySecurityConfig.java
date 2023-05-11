@@ -56,6 +56,9 @@ public class MySecurityConfig {
                 .formLogin().disable()
                 .httpBasic().disable()
                 .csrf().disable();
+
+        // so we can manually save the context
+        http.securityContext(context -> context.requireExplicitSave(true));
         return http.build();
     }
 }

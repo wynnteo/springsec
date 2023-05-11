@@ -34,6 +34,7 @@ public class AuthServiceImpl implements AuthService {
         if (isAuthenticated) {
             SecurityContext context = SecurityContextHolder.getContext();
             context.setAuthentication(token);
+            // In spring 3.0 we need to manually save the context
             securityContextRepository.saveContext(context, request, response);
         }
 
